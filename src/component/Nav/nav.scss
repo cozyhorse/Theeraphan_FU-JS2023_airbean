@@ -1,0 +1,42 @@
+.nav-wrapper{
+    width: 359px;
+    height: 667px;
+    background-color: $tertiary;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+
+
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        gap: 2rem;
+        padding: 0;
+        margin: auto;
+        line-height: 3rem;
+
+
+       a{
+        color: white;
+        border-bottom: solid rgba(255, 255, 255, 0.2) 1px;
+        gap: 2rem;
+        padding: 0.9rem;
+        font-size: 32px;
+        font-family: "PT Serif", serif;
+        font-weight: 700;
+       }
+
+       
+    }
+
+
+    img{
+        width: 50px;
+        height: auto;
+    }
+
+}
+
+

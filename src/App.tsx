@@ -1,11 +1,11 @@
+import Nav from './component/Nav/Nav';
 
-import Landing from './component/Landing/Landing'
 
 function App() {
 
   return (
     <>
-    <Landing />
+    <Nav />
     </>
   )
 }

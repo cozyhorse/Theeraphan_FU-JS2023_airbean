@@ -1,4 +1,4 @@
-import "../../styles/landing.scss"
+import "./landing.scss"
 import header_left from "../../assets/Landing_assets/header_left.svg"
 import header_right from "../../assets/Landing_assets/header_right.svg"
 import header_welcome from "../../assets/Landing_assets/header_welcome.svg"
