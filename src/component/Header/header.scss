@@ -1,0 +1,33 @@
+.header-wrapper{
+    width: 375px;
+    height: 113px;
+    position: relative;
+    background-image: url(../../assets/Global_assets/header_top.svg);
+
+
+    .header-iconwrapper{
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+
+    .bag-icon{
+        width: 60px;
+    }
+
+    .orders-count{
+        background-color: $quaternary;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        font-size: 12px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        color: rgba(255, 255, 255, 1);
+    }
+  
+}
+

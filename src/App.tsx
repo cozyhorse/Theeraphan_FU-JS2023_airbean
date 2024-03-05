@@ -1,11 +1,15 @@
-import Nav from './component/Nav/Nav';
+import About from './component/About/About';
+import Footer from './component/Footer/Footer';
+import Header from './component/Header/Header';
 
 
 function App() {
 
   return (
     <>
-    <Nav />
+    <Header />
+    <About />
+    <Footer />
     </>
   )
 }

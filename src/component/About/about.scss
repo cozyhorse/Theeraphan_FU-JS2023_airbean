@@ -1,0 +1,25 @@
+.about-wrapper{
+    width: 375px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+
+    article{
+        padding: 0.6rem;
+        font-size: 0.875rem;
+        font-family: $secondary-font;
+        h1{
+            margin: 0.625rem 0 3.125rem 0;
+            font-size: 2.625rem;
+            font-family: $primary-font;
+        }
+    }
+
+    article p:nth-child(2){
+        font-weight: 700;
+    }
+
+   
+}
