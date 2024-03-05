@@ -6,7 +6,7 @@ import "./header.scss"
 const Header = () => {
   return (
     <>
-    <div className="header-wrapper">
+    <div className="global-wrapper header-wrapper">
         <div className="header-iconwrapper">
             <img className="icon menu_icon" src={menu_icon} alt="" />
             <div className="bag-wrapper">

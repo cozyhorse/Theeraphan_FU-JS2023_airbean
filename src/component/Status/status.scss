@@ -1,0 +1,46 @@
+.status-wrapper{
+    height: auto;
+    background-color: $quaternary;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    color: white;
+    gap: 2.8rem;
+    padding: 4rem 0;
+
+
+
+    p{
+        font-family: $secondary-font;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    button{
+        width: 184px;
+    }
+
+    .eta-wrapper{
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        text-align: center;
+
+
+        p:nth-child(1){
+            font-family: $primary-font;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            padding: 0 35px;
+        }
+        
+        p:nth-child(2){
+            font-size: 22px;
+        }
+    }
+
+  
+}
+

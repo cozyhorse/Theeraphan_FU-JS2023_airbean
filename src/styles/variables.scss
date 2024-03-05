@@ -6,3 +6,17 @@ $tertiary:rgba(47, 41, 38, 1);
 $quaternary: rgba(229, 103, 78, 1);
 $primary-font: "PT Serif", serif;
 $secondary-font: "Work Sans", sans-serif;
+
+.global-wrapper{
+    width: 375px;
+}
+
+button{
+    border-radius: 25px;
+    border: none;
+    height: auto;
+    font-size: 24px;
+    font-family: $primary-font;
+    font-weight: 700;
+    padding: 0.7rem;
+}

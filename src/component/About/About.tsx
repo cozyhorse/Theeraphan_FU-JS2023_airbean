@@ -6,7 +6,7 @@ import "./about.scss"
 const About = () => {
   return (
     <>
-    <section className='about-wrapper'>
+    <section className='global-wrapper about-wrapper'>
         <article>
             <h1>Vårt Kaffe</h1>
             <p>Pumpkin spice mug, barista cup, sit macchiato, kopi-luwak, doppio, grounds dripper, crema, strong whipped, variety extra iced id lungo half and half mazagran. Pumpkin spice.</p>

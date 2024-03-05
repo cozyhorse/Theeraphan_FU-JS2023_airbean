@@ -6,7 +6,7 @@ import "./nav.scss"
 const Nav = () => {
   return (
     <>
-    <div className='nav-wrapper'>
+    <div className='global-wrapper nav-wrapper'>
     <img src={closebtn} alt="" />
     <ul className='nav-ul'>
         <li className='nav-item'><a href="">Meny</a></li>
