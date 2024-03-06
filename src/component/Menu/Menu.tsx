@@ -13,18 +13,19 @@ const fetchBeans = async () => {
 };
 
 const Menu = () => {
-    const [beans, setBeans] = useState([]);
+    const [beans, setBeans] = useState<BeansMenu[]>([]);
 
   useEffect(() => {
     const PrintBeans = async () => {
-        const data = await fetchBeans();
+        const data: BeansMenu[] = await fetchBeans();
+        console.log("first",data)
         setBeans(data);
       }
 
       PrintBeans()
   }, []);
 
-  const handleClick = (item) => {
+  const handleClick = (item:string) => {
     console.log("Horse", item)
   }
 
@@ -33,7 +34,7 @@ const Menu = () => {
     <>
       <section className="global-wrapper menu-wrapper">
         <h1>Meny</h1>
-        {beans.map((bean:BeansMenu, index) => (
+        {beans.map((bean:BeansMenu, index:number) => (
             <section key={index} className="menu-item">
             <div className="item-container">
               <img onClick={(() => handleClick(bean.title))} className="add-icon" src={add} alt="" />
