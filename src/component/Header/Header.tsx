@@ -3,6 +3,7 @@ import bag_icon from "../../assets/Global_assets/bag-icon.svg"
 import "./header.scss"
 
 
+
 const Header = () => {
   return (
     <>
