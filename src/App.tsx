@@ -6,6 +6,7 @@ import Menu from './component/Menu/Menu';
 import Nav from './component/Nav/Nav';
 import Profile from './component/Profile/Profile';
 import Status from './component/Status/Status';
+import "./component/App/app.scss"
 
 
 
@@ -13,9 +14,11 @@ function App() {
 
   return (
     <>
+    <div className='app-container'>
     <Header />
     <Menu />
     <Footer />  
+    </div>
     </>
   )
 }

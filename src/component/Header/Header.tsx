@@ -7,7 +7,7 @@ import { useState } from "react"
 
 
 const Header = () => {
-  const [openOrderTab, setOpenOrderTab] = useState(true);
+  const [openOrderTab, setOpenOrderTab] = useState(false);
   return (
     <>
     <div className="global-wrapper header-wrapper">

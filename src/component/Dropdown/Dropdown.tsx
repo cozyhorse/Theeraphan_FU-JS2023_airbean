@@ -28,6 +28,7 @@ const Dropdown = () => {
         </div>
         <button>Take my Money!</button>
       </div>
+      <div className="overlay"></div>
     </>
   );
 };

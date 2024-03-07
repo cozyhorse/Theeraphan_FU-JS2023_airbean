@@ -1,6 +1,6 @@
 export interface BeansMenu {
-    id:string;
+    id?:string;
     title:string;
-    desc: string;
+    desc?: string;
     price: number;
 }

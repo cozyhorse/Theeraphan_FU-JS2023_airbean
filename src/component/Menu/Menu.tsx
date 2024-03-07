@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import add from "../../assets/misc/add.svg";
 import { BeansMenu } from "../../ts-files/MenuInterface";
 import "./menu.scss";
+import { useOrdersStore } from "../../store/ordersStore";
 
 const fetchBeans = async () => {
   const rsp = await fetch(
@@ -14,6 +15,7 @@ const fetchBeans = async () => {
 
 const Menu = () => {
     const [beans, setBeans] = useState<BeansMenu[]>([]);
+    const {storedOrders, addCoffe} = useOrdersStore();
 
   useEffect(() => {
     const PrintBeans = async () => {
@@ -25,8 +27,12 @@ const Menu = () => {
       PrintBeans()
   }, []);
 
-  const handleClick = (item:string | object) => {
-    console.log("Horse", item)
+  useEffect(() => {
+    console.log("storedOrders array", storedOrders);
+  },[storedOrders])
+
+  const AddCoffeOrders = (title:string, price:number, id:string) => {
+    addCoffe ? addCoffe(title, price, id) : console.log("Adding failed")
   }
 
 
@@ -37,7 +43,7 @@ const Menu = () => {
         {beans.map((bean:BeansMenu, index:number) => (
             <section key={index} className="menu-item">
             <div className="item-container">
-              <img onClick={(() => handleClick(bean))} className="add-icon" src={add} alt="" />
+              <img onClick={(() => AddCoffeOrders(bean.title, bean.price, bean.id!))} className="add-icon" src={add} alt="" />
               <div className="text-container">
                 <h3>{bean.title}</h3>
                 <p>{bean.desc}</p>
