@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { BeansMenu } from "../ts-files/MenuInterface";
 
 interface State {
-    addCoffe?: (title:string, price: number, id: string) => void;
+    addCoffe: (title:string, price: number, id: string) => void;
     storedOrders?: BeansMenu[];
 }
 
@@ -22,4 +22,14 @@ interface State {
             ],
         }));
     },
-} as State))
+    sumTotal: () => {
+        let total = 0;
+        set((state) => {
+            state.storedOrders?.forEach(order => {
+                 total += order.price
+                 console.log("total", total)
+            });
+            return {...state, total};
+        });
+    }
+}))

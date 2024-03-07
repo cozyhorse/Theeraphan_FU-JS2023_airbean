@@ -15,7 +15,7 @@ const fetchBeans = async () => {
 
 const Menu = () => {
     const [beans, setBeans] = useState<BeansMenu[]>([]);
-    const {storedOrders, addCoffe} = useOrdersStore();
+    const {storedOrders, addCoffe, sumTotal} = useOrdersStore();
 
   useEffect(() => {
     const PrintBeans = async () => {
@@ -33,6 +33,8 @@ const Menu = () => {
 
   const AddCoffeOrders = (title:string, price:number, id:string) => {
     addCoffe ? addCoffe(title, price, id) : console.log("Adding failed")
+
+    sumTotal();
   }
 
 
