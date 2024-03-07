@@ -1,0 +1,159 @@
+.dropdown-orders{
+    position: absolute;
+    left: 1.25rem;
+    top: 70px;
+    width: 21.3125rem ;
+    display: flex;
+    flex-direction: column;
+    place-items: 0;
+    text-align: center;
+    padding: 1rem;
+    height: auto;
+    background: rgba(255, 255, 255, 1) ;
+    border-radius: 5px;
+
+    h1{
+        color: rgba(47, 41, 38, 1);
+        font-weight: 700;
+        font-family: $primary-font;
+        margin-bottom: 35px ;
+    }
+
+    h3{
+        color: rgba(47, 41, 38, 1);
+        font-size: 21px;
+        font-family: $primary-font;
+        font-weight: 700;
+    }
+
+    p{
+        text-align: start;
+        font-family: $secondary-font;
+        font-size: 12px;
+        color: rgba(47, 41, 38, 1);
+    }
+
+    h4{
+        color: rgba(47, 41, 38, 1);
+        font-size: 21px;
+        font-family: $primary-font;
+        font-weight: 700;
+
+    }
+    
+
+
+    .menu-item{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 15px;
+
+
+
+        .item-container{
+            margin-top: 5px;
+            display: flex;
+            flex-wrap: wrap;
+
+          
+
+            .add-icon{
+                margin-top: -5px;
+                width: 50px;
+            }
+
+
+
+            h3{
+                text-align: start;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 233px;
+            }
+
+            h3::after{
+                content: "................................................";
+                font-size: 12px;
+                color: rgba(0, 0, 0, 0.4);
+
+            }
+
+            .text-container{
+                h3{
+                    width: 270px;
+                    
+                }
+            }
+
+        }
+
+        
+    }
+
+    .summary{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+
+
+        p{
+            text-align: start;
+        }
+
+        h3{
+            text-align: start;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 238px;
+        }
+
+        h3::after{
+            content: "   ............................................................";
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.4);
+
+        }
+
+    }
+
+    button{
+        align-self: center;
+        margin: 40px 0 35px 0;
+        background: $tertiary;
+        color: white;
+        width: 248px;
+    }
+}
+
+.counters{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    place-content: center;
+
+    p{
+        text-align: center;
+    }
+
+}
+
+
+.dropdown-orders::before{
+    content: "";
+    position: absolute;
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: white;
+    top: -5px;
+    right: 17px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+
+
+}
+
+.overlay{
+    position: absolute;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.253);
+}

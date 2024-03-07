@@ -25,7 +25,7 @@ const Menu = () => {
       PrintBeans()
   }, []);
 
-  const handleClick = (item:string) => {
+  const handleClick = (item:string | object) => {
     console.log("Horse", item)
   }
 
@@ -37,7 +37,7 @@ const Menu = () => {
         {beans.map((bean:BeansMenu, index:number) => (
             <section key={index} className="menu-item">
             <div className="item-container">
-              <img onClick={(() => handleClick(bean.title))} className="add-icon" src={add} alt="" />
+              <img onClick={(() => handleClick(bean))} className="add-icon" src={add} alt="" />
               <div className="text-container">
                 <h3>{bean.title}</h3>
                 <p>{bean.desc}</p>
