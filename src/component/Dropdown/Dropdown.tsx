@@ -1,30 +1,46 @@
 import Vector_up from "../../assets/misc/Vector_up.svg";
 import Vector_down from "../../assets/misc/Vector_down.svg";
 import "./dropdown.scss";
+import { useOrdersStore } from "../../store/ordersStore";
+import { useEffect, useState } from "react";
 
 const Dropdown = () => {
+  const {storedOrders, sumTotal, incrementItem, decrementItem} = useOrdersStore();
+  const [totalPrice, setTotalPrice,] = useState<number>();
+
+  useEffect(()=> {
+    const totalprice = sumTotal();
+    setTotalPrice(totalprice)
+
+  },[sumTotal, storedOrders])
+
+
   return (
     <>
       <div className="dropdown-orders ">
-        <section className="menu-item">
+      {
+        storedOrders?.map((order) => (
+          <section className="menu-item">
           <div className="item-container">
             <div className="text-container">
-              <h3>BryggKafefe</h3>
-              <p>12 kr</p>
+              <h3>{order.title}</h3>
+              <p>{order.price} kr</p>
             </div>
           </div>
           <div className="counters">
-            <img src={Vector_up} alt="" />
-            <p>3</p>
-            <img src={Vector_down} alt="" />
+            <img onClick={() => incrementItem(order.id)} src={Vector_up} alt="" />
+            <p>{order.quantity}</p>
+            <img onClick={() => decrementItem(order.id)} src={Vector_down} alt="" />
           </div>
         </section>
+        ))
+      }
         <div className="summary">
           <div>
             <h3>Total </h3>
             <p>inkl moms + drönarleverans</p>
           </div>
-          <h4>122 kr</h4>
+          <h4>{totalPrice} kr</h4>
         </div>
         <button>Take my Money!</button>
       </div>

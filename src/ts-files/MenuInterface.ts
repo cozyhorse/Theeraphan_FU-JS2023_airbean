@@ -3,4 +3,5 @@ export interface BeansMenu {
     title:string;
     desc?: string;
     price: number;
+    quantity: number;
 }
