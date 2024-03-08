@@ -1,122 +1,110 @@
-.dropdown-orders{
+.dropdown-orders {
     position: absolute;
     left: 1.25rem;
     top: 70px;
-    width: 21.3125rem ;
+    width: 21.3125rem;
     display: flex;
     flex-direction: column;
     place-items: 0;
     text-align: center;
     padding: 1rem;
     height: auto;
-    background: rgba(255, 255, 255, 1) ;
+    background: rgba(255, 255, 255, 1);
     border-radius: 5px;
 
-    h1{
+    h1 {
         color: rgba(47, 41, 38, 1);
         font-weight: 700;
         font-family: $primary-font;
-        margin-bottom: 35px ;
+        margin-bottom: 35px;
     }
 
-    h3{
+    h3 {
         color: rgba(47, 41, 38, 1);
         font-size: 21px;
         font-family: $primary-font;
         font-weight: 700;
     }
 
-    p{
+    p {
         text-align: start;
         font-family: $secondary-font;
         font-size: 12px;
         color: rgba(47, 41, 38, 1);
     }
 
-    h4{
+    h4 {
         color: rgba(47, 41, 38, 1);
         font-size: 21px;
         font-family: $primary-font;
         font-weight: 700;
 
     }
-    
 
 
-    .menu-item{
+
+    .menu-item {
         display: flex;
         justify-content: space-between;
         padding-right: 15px;
 
-
-
-        .item-container{
+        .item-container {
             margin-top: 5px;
             display: flex;
             flex-wrap: wrap;
 
-          
-
-            .add-icon{
+            .add-icon {
                 margin-top: -5px;
                 width: 50px;
             }
 
-
-
-            h3{
+            h3 {
                 text-align: start;
                 white-space: nowrap;
                 overflow: hidden;
                 width: 233px;
             }
 
-            h3::after{
+            h3::after {
                 content: "................................................";
                 font-size: 12px;
                 color: rgba(0, 0, 0, 0.4);
-
             }
 
-            .text-container{
-                h3{
+            .text-container {
+                h3 {
                     width: 270px;
-                    
                 }
             }
-
         }
-
-        
     }
 
-    .summary{
+    .summary {
         margin-top: 5rem;
         display: flex;
         justify-content: space-between;
 
 
-        p{
+        p {
             text-align: start;
         }
 
-        h3{
+        h3 {
             text-align: start;
             white-space: nowrap;
             overflow: hidden;
             width: 238px;
         }
 
-        h3::after{
+        h3::after {
             content: "   ............................................................";
             font-size: 12px;
             color: rgba(0, 0, 0, 0.4);
 
         }
-
     }
 
-    button{
+    button {
         align-self: center;
         margin: 40px 0 35px 0;
         background: $tertiary;
@@ -125,20 +113,20 @@
     }
 }
 
-.counters{
+.counters {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
     place-content: center;
 
-    p{
+    p {
         text-align: center;
     }
 
 }
 
 
-.dropdown-orders::before{
+.dropdown-orders::before {
     content: "";
     position: absolute;
     width: 0.9rem;
@@ -152,7 +140,7 @@
 
 }
 
-.overlay{
+.overlay {
     position: absolute;
     top: 0px;
     z-index: -1;
