@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react"
 import drone from "../../assets/misc/drone.svg"
 import { useOrdersStore } from "../../store/ordersStore"
-import "./status.scss"
 import { DataBack } from "../../ts-files/MenuInterface"
+import { useNavigate } from "react-router-dom"
+import "./status.scss"
 
 
 
 const Status = () => {
   const {storedETA} = useOrdersStore();
-  const [etaData, setEtaData] = useState<DataBack>([]);
+  const [etaData, setEtaData] = useState([] as DataBack);
 
 useEffect(() => {
 setEtaData(storedETA);
 console.log("etaData", etaData)
-}, [storedETA])
+}, [storedETA, etaData])
+
+const navigate = useNavigate()
 
 
   return (
@@ -25,7 +28,7 @@ console.log("etaData", etaData)
     <p>Din beställning är på väg!</p>
     <p><b>{etaData.eta}</b> minuter</p>
     </div>
-    <button>Ok, cool!</button>
+    <button onClick={()=> navigate("/menu")} >Ok, cool!</button>
 </section>
     </>
   )

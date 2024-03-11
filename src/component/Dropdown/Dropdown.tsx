@@ -4,8 +4,13 @@ import { useOrdersStore } from "../../store/ordersStore";
 import { useEffect, useState } from "react";
 import { BeansMenu } from "../../ts-files/MenuInterface";
 import "./dropdown.scss";
+import { useNavigate } from "react-router-dom";
 
-const Dropdown = () => {
+type props = {
+  onClick: () => void
+}
+
+const Dropdown = ({onClick}: props) => {
   const {storedOrders, sumTotal, incrementItem, decrementItem, confirmAndSendOrder} = useOrdersStore();
   const [totalPrice, setTotalPrice,] = useState<number>();
 
@@ -14,6 +19,14 @@ const Dropdown = () => {
     setTotalPrice(totalprice)
 
   },[sumTotal, storedOrders])
+
+  const navigate = useNavigate()
+
+  const handleOrder = ():void => {
+    confirmAndSendOrder();
+    navigate("status");
+
+  };
 
 
   return (
@@ -43,7 +56,9 @@ const Dropdown = () => {
           </div>
           <h4>{totalPrice} kr</h4>
         </div>
-        <button onClick={()=> confirmAndSendOrder()}>Take my Money!</button>
+        <button 
+        onClick={() => {handleOrder(); onClick()}}
+        >Take my Money!</button>
       </div>
       <div className="overlay"></div>
     </>

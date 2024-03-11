@@ -9,12 +9,9 @@ interface State {
     decrementItem: (id:string) => void;
     confirmAndSendOrder: () => void;
     storedOrders: BeansMenu[];
-    storedETA: DataBack[];
+    storedETA: DataBack;
 
 }
-
-
-
 
  export const useOrdersStore = create<State>((set) => ({
     storedOrders: [],
@@ -118,9 +115,9 @@ interface State {
 
                     set({storedOrders: []})
 
-                    const dataRecieved: DataBack = await sendOrder.json()
-                    console.log("data back", dataRecieved)
-                    const {eta, orderNr} = dataRecieved;
+                    const dataRecived: DataBack = await sendOrder.json()
+                    console.log("data back", dataRecived)
+                    const {eta, orderNr} = dataRecived;
                     console.log("Eta", eta);
                     console.log("orderNr", orderNr)
                     set({storedETA: {eta, orderNr}})

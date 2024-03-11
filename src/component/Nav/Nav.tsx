@@ -1,18 +1,24 @@
+
 import closebtn from "../../assets/misc/close.svg";
-import "./nav.scss"
+import { navigations } from "../../ts-files/NavItems";
+import { NavLink } from "react-router-dom";
+import "./nav.scss";
 
+type props = {
+  onClick: () => void
+}
 
+const Nav = ({onClick}: props) => {
 
-const Nav = () => {
   return (
     <>
     <div className='global-wrapper nav-wrapper'>
-    <img src={closebtn} alt="" />
+    <img onClick={onClick} src={closebtn} alt="" />
     <ul className='nav-ul'>
-        <li className='nav-item'><a href="">Meny</a></li>
-        <li className='nav-item'><a href="">Vårt kaffe</a></li>
-        <li className='nav-item'><a href="">Min profil</a></li>
-        <li className='nav-item'><a href="">Orderstatus</a></li>
+{ navigations.map((nav, index) => (
+  <li key={index} onClick={onClick} className="nav-item"><NavLink to={nav.href}>{nav.label}</NavLink></li>
+))}
+
     </ul>
     </div>
     </>

@@ -1,26 +1,38 @@
 import About from './component/About/About';
-import Footer from './component/Footer/Footer';
-import Header from './component/Header/Header';
-import Landing from './component/Landing/Landing';
 import Menu from './component/Menu/Menu';
-import Nav from './component/Nav/Nav';
 import Profile from './component/Profile/Profile';
 import Status from './component/Status/Status';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import "./component/App/app.scss"
+import Layout from './component/Layout/Layout';
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route>
+    <Route path='/' element={<Layout />}>
+      <Route index element={<Menu />} />
+      <Route path='/menu' element={<Menu />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/profile' element={<Profile />} />
+      <Route path='/status' element={<Status />} />
+    </Route>
+  </Route>
+))
 
 
 
 function App() {
+  
 
   return (
-    <>
+
     <div className='app-container'>
-    <Header />
-    <Menu />
-    <Status />
-    <Footer />  
+      <RouterProvider router={router} />
     </div>
-    </>
   )
 }
 

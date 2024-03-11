@@ -5,9 +5,11 @@ import Dropdown from "../Dropdown/Dropdown";
 import { useEffect, useState } from "react";
 import { useOrdersStore } from "../../store/ordersStore";
 import "./header.scss";
+import Nav from "../Nav/Nav";
 
 const Header = () => {
   const [openOrderTab, setOpenOrderTab] = useState(false);
+  const [openNavTab, setOpenNavTab] = useState(false);
   const { storedOrders, sumQuantity } = useOrdersStore();
   const [quantity, setQuantity] = useState<number>();
 
@@ -19,8 +21,17 @@ const Header = () => {
   return (
     <>
       <div className="global-wrapper header-wrapper">
-        <div className="header-iconwrapper">
-          <img className="icon menu_icon" src={menu_icon} alt="" />
+        <div 
+        className="header-iconwrapper"
+        style={openNavTab ? {justifyContent: "end"} : {}}
+        >
+          {
+            !openNavTab ? (<img 
+              className="icon menu_icon" 
+              src={menu_icon} alt="" 
+              onClick={() => setOpenNavTab((prev) => !prev)}
+              />) : null
+          }
           <div className="bag-wrapper">
             {storedOrders?.length ? (
               <div className="orders-count">{quantity}</div>
@@ -33,7 +44,8 @@ const Header = () => {
             />
           </div>
         </div>
-        {openOrderTab && <Dropdown />}
+        {openOrderTab && <Dropdown onClick={() => setOpenOrderTab((false))} />}
+        {openNavTab && <Nav onClick={() => setOpenNavTab((false))} />}
       </div>
     </>
   );

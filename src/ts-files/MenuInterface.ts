@@ -7,6 +7,6 @@ export interface BeansMenu {
 }
 
 export interface DataBack {
-    eta: number,
-    orderNr: string,
+    eta?: number,
+    orderNr?: string,
 }

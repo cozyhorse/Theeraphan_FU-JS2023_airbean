@@ -5,7 +5,9 @@ import header_welcome from "../../assets/Landing_assets/header_welcome.svg"
 
 
 
+
 const Landing = () => {
+
   return (
     <>
     <div className="global-wrapper wrapper">
