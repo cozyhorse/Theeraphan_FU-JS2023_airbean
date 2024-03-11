@@ -1,11 +1,12 @@
 import Vector_up from "../../assets/misc/Vector_up.svg";
 import Vector_down from "../../assets/misc/Vector_down.svg";
-import "./dropdown.scss";
 import { useOrdersStore } from "../../store/ordersStore";
 import { useEffect, useState } from "react";
+import { BeansMenu } from "../../ts-files/MenuInterface";
+import "./dropdown.scss";
 
 const Dropdown = () => {
-  const {storedOrders, sumTotal, incrementItem, decrementItem} = useOrdersStore();
+  const {storedOrders, sumTotal, incrementItem, decrementItem, confirmAndSendOrder} = useOrdersStore();
   const [totalPrice, setTotalPrice,] = useState<number>();
 
   useEffect(()=> {
@@ -19,7 +20,7 @@ const Dropdown = () => {
     <>
       <div className="dropdown-orders ">
       {
-        storedOrders?.map((order) => (
+        storedOrders.map((order: BeansMenu) => (
           <section className="menu-item">
           <div className="item-container">
             <div className="text-container">
@@ -42,7 +43,7 @@ const Dropdown = () => {
           </div>
           <h4>{totalPrice} kr</h4>
         </div>
-        <button>Take my Money!</button>
+        <button onClick={()=> confirmAndSendOrder()}>Take my Money!</button>
       </div>
       <div className="overlay"></div>
     </>

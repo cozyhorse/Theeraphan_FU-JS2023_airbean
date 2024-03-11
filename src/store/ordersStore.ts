@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { BeansMenu } from "../ts-files/MenuInterface";
+import { BeansMenu, DataBack } from "../ts-files/MenuInterface";
 
 interface State {
     addCoffe: (title:string, price: number, id: string) => void;
@@ -7,13 +7,18 @@ interface State {
     sumQuantity: () => number;
     incrementItem: (id:string) => void;
     decrementItem: (id:string) => void;
+    confirmAndSendOrder: () => void;
     storedOrders: BeansMenu[];
+    storedETA: DataBack[];
 
 }
 
 
+
+
  export const useOrdersStore = create<State>((set) => ({
     storedOrders: [],
+    storedETA: [],
     addCoffe: (title, price, id) => {
         set((state) => {
             const checkDuplicates = state.storedOrders?.findIndex(order => order.id === id);
@@ -88,5 +93,43 @@ interface State {
             })
             return {storedOrders: decrementOrder.filter((item) => item.quantity > 0)}
         })
+    },
+    confirmAndSendOrder: () => {
+        set(async (state) => {
+            const confirmedOrder = {
+                details: {
+                    "order": state.storedOrders.map((order) => ({
+                            name: order.title,
+                            price: order.price
+                        }))
+                }
+            };
+
+            console.log("confirmedOrder", confirmedOrder)
+
+            try {
+                    const sendOrder = await fetch("https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order", {
+                        method: "post",
+                        body: JSON.stringify(confirmedOrder),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+
+                    set({storedOrders: []})
+
+                    const dataRecieved: DataBack = await sendOrder.json()
+                    console.log("data back", dataRecieved)
+                    const {eta, orderNr} = dataRecieved;
+                    console.log("Eta", eta);
+                    console.log("orderNr", orderNr)
+                    set({storedETA: {eta, orderNr}})
+
+            }catch(error){
+                console.log("Error sending post", error)
+            }
+        })
+        
     }
+
 }));

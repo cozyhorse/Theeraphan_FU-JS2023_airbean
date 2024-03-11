@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import add from "../../assets/misc/add.svg";
 import { BeansMenu } from "../../ts-files/MenuInterface";
-import "./menu.scss";
 import { useOrdersStore } from "../../store/ordersStore";
+import "./menu.scss";
 
 const fetchBeans = async () => {
   const rsp = await fetch(

@@ -5,3 +5,8 @@ export interface BeansMenu {
     price: number;
     quantity: number;
 }
+
+export interface DataBack {
+    eta: number,
+    orderNr: string,
+}
