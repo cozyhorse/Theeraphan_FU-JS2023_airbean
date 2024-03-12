@@ -27,7 +27,8 @@ const Header = () => {
         >
           {
             !openNavTab ? (<img 
-              className="icon menu_icon" 
+              className="icon menu_icon"
+              style={openOrderTab ? {zIndex: "-1"} : {}} 
               src={menu_icon} alt="" 
               onClick={() => setOpenNavTab((prev) => !prev)}
               />) : null

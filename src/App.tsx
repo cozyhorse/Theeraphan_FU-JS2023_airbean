@@ -8,13 +8,14 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import "./component/App/app.scss"
 import Layout from './component/Layout/Layout';
+import Landing from './component/Landing/Landing';
+import "./component/App/app.scss"
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path='/' element={<Layout />}>
-      <Route index element={<Menu />} />
+      <Route index element={<Landing />} />
       <Route path='/menu' element={<Menu />} />
       <Route path='/about' element={<About />} />
       <Route path='/profile' element={<Profile />} />

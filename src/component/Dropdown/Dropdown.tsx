@@ -42,9 +42,9 @@ const Dropdown = ({onClick}: props) => {
             </div>
           </div>
           <div className="counters">
-            <img onClick={() => incrementItem(order.id)} src={Vector_up} alt="" />
+            <img className="arrow" onClick={() => incrementItem(order.id)} src={Vector_up} alt="" />
             <p>{order.quantity}</p>
-            <img onClick={() => decrementItem(order.id)} src={Vector_down} alt="" />
+            <img className="arrow" onClick={() => decrementItem(order.id)} src={Vector_down} alt="" />
           </div>
         </section>
         ))
