@@ -15,7 +15,7 @@ const fetchBeans = async () => {
 
 const Menu = () => {
     const [beans, setBeans] = useState<BeansMenu[]>([]);
-    const {storedOrders, addCoffe} = useOrdersStore();
+    const {addCoffe} = useOrdersStore();
 
   useEffect(() => {
     const PrintBeans = async () => {
@@ -26,10 +26,6 @@ const Menu = () => {
 
       PrintBeans()
   }, []);
-
-  useEffect(() => {
-    console.log("storedOrders array", storedOrders);
-  },[storedOrders])
 
   const AddCoffeOrders = (title:string, price:number, id:string) => {
     addCoffe(title, price, id)

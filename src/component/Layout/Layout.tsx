@@ -9,7 +9,8 @@ import "./layout.scss"
 
 const Layout = () => {
   const [loadBackground, setLoadBackground] = useState("");
-  const [loadComponent, setLoadComponent] = useState(true);
+  const [loadheader, setLoadHeader] = useState(true);
+  const [loadfooter, setLoadFooter] = useState(true);
   const location = useLocation();
 
   const backgroundBasedOnPath = () => {
@@ -17,27 +18,32 @@ const Layout = () => {
 
     if(currentPath === "/menu"){
       setLoadBackground(`rgba(243, 228, 225, 1)`)
-      setLoadComponent(true)
+      setLoadHeader(true)
+      setLoadFooter(true)
     }
 
     if(currentPath === "/about"){
       setLoadBackground(`rgba(243, 228, 225, 1)`)
-      setLoadComponent(true)
+      setLoadHeader(true)
+      setLoadFooter(true)
     }
 
     if(currentPath === "/profile"){
       setLoadBackground(`rgba(47, 41, 38, 1)`)
-      setLoadComponent(true)
+      setLoadHeader(true)
+      setLoadFooter(false)
     }
 
     if(currentPath === "/status"){
       setLoadBackground(`rgba(229, 103, 78, 1)`)
-      setLoadComponent(false)
+      setLoadHeader(false)
+        setLoadFooter(false)
     }
 
     if(currentPath === "/"){
-      setLoadBackground(`rgba(229, 103, 78, 1)`)
-      setLoadComponent(false)
+      setLoadBackground(`rgba(56, 132, 109, 1)`)
+      setLoadHeader(false)
+      setLoadFooter(false)
     }
 
   }
@@ -48,11 +54,11 @@ const Layout = () => {
 
   return (
    <div style={{background: loadBackground}}>
-   {loadComponent && <Header />}
+   {loadheader && <Header />}
    <main>
     <Outlet />
    </main>
-   {loadComponent && <Footer />}
+   {loadfooter && <Footer />}
    </div>
   )
 }
