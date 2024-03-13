@@ -1,95 +1,13 @@
-.profile-wrapper{
-    background-color: $tertiary;
-    display: flex;
-    flex-direction: column;
-
-    .avatar{
-        display: flex;
-        flex-direction: column;
-        place-items: center;
-        padding: 145px 0 0 0;
-
-
-        img{
-            width: 100px;
-            padding: 0 0 20px 0 ;
-        }
-
-        p{
-            margin: 0;
-        }
-
-         p:nth-child(2){
-            font-family: $primary-font;
-            font-weight: 700;
-            font-size: 24px;
-            color: white;
-         }
-
-         p:nth-child(3){
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 400;
-         }
-    }
+.container{
+    min-height: 565px;
+    position: relative;
 }
 
-.orderhistory{
-    display: block;
-    padding: 5rem 2rem ;
 
+// .window{
+//   position: absolute;
+//   bottom: 170px;
+//   right: 110px;
+//   z-index: 8;
 
-    h4{
-        color: white;
-        font-family: $primary-font;
-        font-weight: 700;
-        margin: 0;
-        font-size: 22px;
-    }
-
-    .info-container{
-        display: flex;
-        justify-content: space-between;
-        border-bottom: solid rgba(255, 255, 255, 0.08) 1px ;
-        margin: 10px 0;
-    
-        
-
-
-        .total{
-            text-align: end;
-        }
-
-        .dates{
-            text-align: end;
-        }
-
-        p{
-            font-family: $secondary-font;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            line-height: 15px;
-            margin-bottom: 10px;
-        }
-
-        P:nth-child(2){
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 12px;
-            font-weight: 400;
-        }
-           
-    }
-
-}
-
-.totale{
-    display: flex;
-    justify-content: space-between;
-    border-top: solid 1px rgba(255, 255, 255, 0.8);
-    margin-top: -10px;
-
-    p{
-        font-family: $secondary-font;
-        font-weight: 700;
-        color: rgba(255, 255, 255, 0.8);
-    }
-}
+// }

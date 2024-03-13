@@ -12,6 +12,7 @@ import Layout from './component/Layout/Layout';
 import Landing from './component/Landing/Landing';
 import "./component/App/app.scss"
 
+
 const router = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path='/' element={<Layout />}>

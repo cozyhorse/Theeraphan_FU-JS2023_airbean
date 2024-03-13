@@ -6,12 +6,31 @@ import { useEffect, useState } from "react";
 import { useOrdersStore } from "../../store/ordersStore";
 import "./header.scss";
 import Nav from "../Nav/Nav";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [openOrderTab, setOpenOrderTab] = useState(false);
   const [openNavTab, setOpenNavTab] = useState(false);
   const { storedOrders, sumQuantity } = useOrdersStore();
   const [quantity, setQuantity] = useState<number>();
+
+  const location = useLocation();
+
+  const hideBag = () => {
+    const currentPath = location.pathname;
+    const bag = document.querySelector(".bag-wrapper")
+
+    if(currentPath === "/profile"){
+      bag?.classList.add("hidden")
+    }else{
+      bag?.classList.remove("hidden")
+    }
+
+  }
+
+  useEffect(() => {
+    hideBag()
+  }, [location])
 
   useEffect(() => {
     const updateQuantity = sumQuantity();
@@ -20,7 +39,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="global-wrapper header-wrapper">
+      <div className="global-wrapper header-wrapper" style={openNavTab ? {zIndex: "9"} : {}}>
         <div 
         className="header-iconwrapper"
         style={openNavTab ? {justifyContent: "end"} : {}}

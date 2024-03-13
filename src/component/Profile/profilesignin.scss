@@ -1,0 +1,106 @@
+.reg-wrapper {
+    width: 341px;
+    height: 565.77px;
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1.5rem;
+    color: $tertiary;
+    border-radius: 3px;
+    border: solid rgba(47, 41, 38, 1) 1px;
+    position: absolute;
+    top: -30px;
+    left: 17px;
+    z-index: 8;
+
+    section {
+
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+
+
+        img {
+            width: 30px;
+            padding-top: 30px;
+        }
+
+
+        h1 {
+            font-size: 32px;
+            line-height: 38.4px;
+            font-family: $primary-font;
+            font-weight: 700;
+            text-align: center;
+            padding: 0 23px;
+        }
+
+        h3 {
+            font-family: $secondary-font;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            padding: 0 21px;
+            font-weight: 400;
+        }
+
+
+
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+        gap: 0.6rem;
+
+        input {
+            height: 48px;
+            border-radius: 6px;
+            background: none;
+            border: solid black 1px;
+            
+        }
+
+        label {
+            font-size: $secondary-font;
+            list-style: 14.4px;
+            
+            
+        }
+
+
+
+
+        section {
+            align-self: flex-start;
+            display: flex;
+            flex-direction: row;
+
+
+            input {
+                transform: scale(1.3);
+            }
+
+
+        }
+    }
+
+    button {
+        margin-bottom: 50px;
+        width: 248px;
+        background-color: $tertiary;
+        color: white;
+    }
+}
+
+.gdpr{
+    margin-left: 10px;
+}
+
+.radiobtn{
+    accent-color: rgba(14, 146, 125, 1);
+}
