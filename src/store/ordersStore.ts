@@ -20,7 +20,7 @@ interface State {
         set((state) => {
             const checkDuplicates = state.storedOrders?.findIndex(order => order.id === id);
             if(checkDuplicates !== -1){
-                console.log("Duplicate!")
+                //console.log("Duplicate!")
                 const updateList = [...state.storedOrders];
                 updateList[checkDuplicates!].quantity += 1
                 return {storedOrders: updateList};
@@ -48,7 +48,7 @@ interface State {
             });
             return {...state, total};
         });
-        console.log("total", total)
+        //console.log("total", total)
         return total;
     },
     sumQuantity: ():number => {
@@ -59,7 +59,7 @@ interface State {
             })
             return {...state, totalQuantity}
         })
-        console.log("Total quantity in array", totalQuantity)
+        //console.log("Total quantity in array", totalQuantity)
         return totalQuantity;
     },
     incrementItem: (id) => {
@@ -102,7 +102,7 @@ interface State {
                 }
             };
 
-            console.log("confirmedOrder", confirmedOrder)
+            //console.log("confirmedOrder", confirmedOrder)
 
             try {
                     const sendOrder = await fetch("https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order", {
@@ -116,10 +116,10 @@ interface State {
                     set({storedOrders: []})
 
                     const dataRecived: DataBack = await sendOrder.json()
-                    console.log("data back", dataRecived)
+                    //console.log("data back", dataRecived)
                     const {eta, orderNr} = dataRecived;
-                    console.log("Eta", eta);
-                    console.log("orderNr", orderNr)
+                    //console.log("Eta", eta);
+                    //console.log("orderNr", orderNr)
                     set({storedETA: {eta, orderNr}})
 
             }catch(error){

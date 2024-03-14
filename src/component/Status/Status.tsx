@@ -13,7 +13,7 @@ const Status = () => {
 
 useEffect(() => {
 setEtaData(storedETA);
-console.log("etaData", etaData)
+//console.log("etaData", etaData)
 }, [storedETA, etaData])
 
 const navigate = useNavigate()

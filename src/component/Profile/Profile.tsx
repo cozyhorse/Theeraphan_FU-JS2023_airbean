@@ -5,7 +5,7 @@ import ProfileSignedIn from "./ProfileSignedIn";
 import "./profile.scss";
 
 const Profile = () => {
-  const [signedin, setSignedIn] = useState(true);
+  const [signedin] = useState(true);
   return (
     <>
     <div className="container">

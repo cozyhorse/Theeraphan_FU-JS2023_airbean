@@ -9,7 +9,7 @@ const fetchBeans = async () => {
     "https://airbean-api-xjlcn.ondigitalocean.app/api/beans"
   );
   const data = await rsp.json();
-  console.log("beans", data.menu);
+ // console.log("beans", data.menu);
   return await data.menu;
 };
 
@@ -20,7 +20,7 @@ const Menu = () => {
   useEffect(() => {
     const PrintBeans = async () => {
         const data: BeansMenu[] = await fetchBeans();
-        console.log("first",data)
+        // console.log("first",data)
         setBeans(data);
       }
 

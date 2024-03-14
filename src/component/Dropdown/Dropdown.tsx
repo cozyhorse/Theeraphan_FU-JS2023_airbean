@@ -36,7 +36,7 @@ const Dropdown = ({ onClick }: props) => {
     <>
       <div className="dropdown-orders ">
         {storedOrders.map((order: BeansMenu) => (
-          <section className="menu-item">
+          <section key={order.id} className="menu-item">
             <div className="item-container">
               <div className="text-container">
                 <h3>{order.title}</h3>

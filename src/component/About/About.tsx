@@ -1,6 +1,4 @@
 import owner from "../../assets/About_assets/Owner.svg"
-import Footer from "../Footer/Footer"
-import Header from "../Header/Header"
 
 import "./about.scss"
 
